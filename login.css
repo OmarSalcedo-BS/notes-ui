@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  background-image: url("/fondo.jpg");
+  background-image: url("/public/fondo.jpg");
   background-position: center center;
   background-size: contain;
 }
