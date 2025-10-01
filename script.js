@@ -1,5 +1,6 @@
 import { Usuarios } from "./src/config/database.js"
-import { alertaRedireccion } from "./src/utils/alertas.js"
+import { alertaRedireccion, alertaGeneral } from "./src/utils/alertas.js"
+import { guardarLocalStorage } from "./src/config/local-storage.js"
 
 let btnLogin = document.querySelector("#login")
 btnLogin.addEventListener("click", () => {
@@ -7,7 +8,8 @@ btnLogin.addEventListener("click", () => {
     let contrasena = document.querySelector("#password").value
     let usuarioAuth = Usuarios.find((usuario) => correo == usuario.correo && contrasena == usuario.contraseña)
     if (usuarioAuth) {
-        return alertaRedireccion()
+        guardarLocalStorage("usuario", usuarioAuth)
+        return alertaRedireccion("Bienvenido al sistema", "success", "/src/pages/html/home.html")
     }
-    return alertaRedireccion()
+    return alertaGeneral("Error de credenciales", "Usuario y/o contraseña no coinciden, intentar nuevamente", "error")
 })
