@@ -1,6 +1,10 @@
 import { Usuarios } from "./src/config/database.js"
 import { alertaRedireccion, alertaGeneral } from "./src/utils/alertas.js"
 import { guardarLocalStorage } from "./src/config/local-storage.js"
+import { generarToken } from "./src/utils/generadores-codigos.js"
+
+let token = generarToken()
+console.log(token)
 
 let btnLogin = document.querySelector("#login")
 btnLogin.addEventListener("click", () => {
