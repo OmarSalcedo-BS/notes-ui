@@ -3,8 +3,7 @@ import { alertaRedireccion, alertaGeneral } from "./src/utils/alertas.js"
 import { guardarLocalStorage } from "./src/config/local-storage.js"
 import { generarToken } from "./src/utils/generadores-codigos.js"
 
-let token = generarToken()
-console.log(token)
+
 
 let btnLogin = document.querySelector("#login")
 btnLogin.addEventListener("click", () => {
@@ -12,6 +11,9 @@ btnLogin.addEventListener("click", () => {
     let contrasena = document.querySelector("#password").value
     let usuarioAuth = Usuarios.find((usuario) => correo == usuario.correo && contrasena == usuario.contraseña)
     if (usuarioAuth) {
+        let token = generarToken()
+        console.log(token)
+        guardarLocalStorage("token", token)
         guardarLocalStorage("usuario", usuarioAuth)
         return alertaRedireccion("Bienvenido al sistema", "success", "/src/pages/html/home.html")
     }

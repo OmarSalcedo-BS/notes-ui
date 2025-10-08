@@ -6,4 +6,8 @@ export function generarToken() {
     return token
 }
 
+export function generarId() {
+    return Math.random().toString(36).substring(2)
+}
+
 /* Math.random() -> Genera un número aleatorio entre 0 y 1, con máximo 16 posiciones decimales */

@@ -7,10 +7,10 @@ export const Usuarios = [
 		rol: "admin"
 	},
 	{
-		nombre: "Maria Gomez",
-		correo: "maria.gomez@email.com",
+		nombre: "Omar Salcedo",
+		correo: "omar.salcedo@gmail.com",
 		id: "E5F6G7H8",
-		contraseña: "maria456",
+		contraseña: "Omar25",
 		rol: "usuario"
 	},
 	{
@@ -21,3 +21,12 @@ export const Usuarios = [
 		rol: "usuario"
 	}
 ];
+
+export const Notas = [
+	{
+	id: 1,
+	descripcion: "",
+	fecha: "",
+	autor: ""
+	}
+]

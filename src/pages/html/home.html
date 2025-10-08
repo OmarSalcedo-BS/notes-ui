@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="/src/pages/css/home.css" />
-    <title>Home</title>
-  </head>
-  <body>
-    <header>
-      <div>
-        <article>
-          <span id="inicialesUsuario"></span>
-        </article>
-      </div>
-      <nav>
-        <a href="">Home</a>
-        <a href="">Notas</a>
-        <button id="btnCerrarSesion" type="button">Cerrar Sesión</button>
-      </nav>
-    </header>
 
-    <script type="module" src="/src/pages/js/home.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="/src/pages/css/home.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <header>
+    <div class="usuarioInit">
+      <article>
+        <span id="inicialesUsuario"></span>
+      </article>
+    </div>
+    <nav>
+      <a href="" class="animated-button">Home</a>
+      <a href="" class="animated-button">Notas</a>
+      <button id="btnCerrarSesion" class="animated-button">
+        <span>Cerrar sesión</span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <aside>
+      <form id="form" class="form">
+        <p class="form-title">Registro de notas</p>
+        <div class="input-container">
+          <span>
+          </span>
+        </div>
+        <div class="input-container">
+          <textarea name="" id="descripcion" placeholder="Ingresa el contenido de la nota"></textarea>
+        </div>
+        <button type="submit" class="submit">
+          Registrar Nota
+        </button>
+      </form>
+
+    </aside>
+    <div></div>
+    <section>
+
+
+    </section>
+  </main>
+
+  <script type="module" src="/src/pages/js/home.js"></script>
+</body>
+
 </html>
