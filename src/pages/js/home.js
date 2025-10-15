@@ -20,7 +20,7 @@ btnCerrarSesion.addEventListener("click", () => {
     limpiarLocalStorage("usuario")
     limpiarLocalStorage("token")
     alertaRedireccion("Sesión finalizada", "info", "/index.html")
-})
+});
 
 let form = document.getElementById("form")
 form.addEventListener("submit", (e) => {
@@ -36,12 +36,12 @@ form.addEventListener("submit", (e) => {
     }
 
     Notas.push(nota)
-    console.log(Notas)
     guardarLocalStorage("notas", Notas)
     mostrarNotas()
 })
 
 function mostrarNotas() {
+    document.getElementById("notes-card").innerHTML = ""
     let notas = consultarLocalStorage("notas")
     notas.map((nota) => {
         let card = document.createElement("div")
@@ -49,11 +49,12 @@ function mostrarNotas() {
         let fecha = document.createElement("p")
         let descripcion = document.createElement("p")
 
-        autor.textContent = nota.autor
-        fecha.textContent = nota.fecha
-        descripcion.textContent = nota.descripcion
-
-
-    })
+        autor.textContent = "Autor: " + nota.autor
+        fecha.textContent = "Fecha: " + nota.fecha
+        descripcion.textContent = "Descripción: " + nota.descripcion
+        card.append(autor, fecha, descripcion)
+        card.classList.add("card")
+        document.getElementById("notes-card").append(card)
+    });
 
 }
