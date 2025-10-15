@@ -18,6 +18,7 @@ document.querySelector("#inicialesUsuario").textContent = inicialesUsuario
 let btnCerrarSesion = document.querySelector("#btnCerrarSesion")
 btnCerrarSesion.addEventListener("click", () => {
     limpiarLocalStorage("usuario")
+    limpiarLocalStorage("token")
     alertaRedireccion("Sesión finalizada", "info", "/index.html")
 })
 
@@ -31,10 +32,28 @@ form.addEventListener("submit", (e) => {
         id: generarId(),
         descripcion,
         fecha,
-        autor: Usuarios.nombre
+        autor: usuario.nombre
     }
 
     Notas.push(nota)
     console.log(Notas)
     guardarLocalStorage("notas", Notas)
+    mostrarNotas()
 })
+
+function mostrarNotas() {
+    let notas = consultarLocalStorage("notas")
+    notas.map((nota) => {
+        let card = document.createElement("div")
+        let autor = document.createElement("p")
+        let fecha = document.createElement("p")
+        let descripcion = document.createElement("p")
+
+        autor.textContent = nota.autor
+        fecha.textContent = nota.fecha
+        descripcion.textContent = nota.descripcion
+
+
+    })
+
+}
